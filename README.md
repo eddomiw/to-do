@@ -1,2 +1,2 @@
 # to-do
-Apply webpack and SOLID principles to-do list project 
+Apply webpack and SOLID principles to to-do list project 
