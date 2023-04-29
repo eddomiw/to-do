@@ -1,3 +1,4 @@
 node_modules
 package-lock-modules
 package.json
+scss/reset.scss
