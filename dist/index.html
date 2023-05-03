@@ -15,6 +15,39 @@
       <h1>Todo List</h1>
     </header>
     <div class="body-container">
+      <div class="form-container">
+        <label for="task">Title:</label>
+        <input
+          type="text"
+          name="task"
+          id="task"
+          value="Learn why Adam is so cool"
+        />
+
+        <label for="details">Details:</label>
+        <input
+          type="text"
+          name="details"
+          id="details"
+          value="e.g. hair, tight shoe laces, almonds "
+        />
+
+        <div>Due Date:</div>
+        <input type="date" name="date" id="date" value="mm-dd-yyyy" />
+
+        <div>
+          Priority:
+          <input type="button" id="low" name="low" value="Low" />
+          <input type="button" id="medium" name="medium" value="Medium" />
+          <input type="button" id="high" name="high" value="High" />
+        </div>
+        <input
+          type="button"
+          name="add-to-tasks"
+          id="add-to-tasks"
+          value="Add to tasks"
+        />
+      </div>
       <nav class=".nav">
         <div class="inbox">
           <img src="../src/images/inbox-44.svg" alt="Inbox Image" />
