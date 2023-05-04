@@ -1,8 +1,10 @@
-function toggleContainer() {
-  var container = document.getElementById("form-container");
-  if (container.style.display === "none") {
+const addTask = document.querySelector(".addTask");
+const formContainer = document.querySelector(".form-container");
+
+export default addTask.addEventListener("click", () => {
+  if (formContainer.style.display === "none") {
     container.style.display = "block";
   } else {
-    container.style.display = "none";
+    formContainer.style.display = "none";
   }
-}
+});

@@ -3,3 +3,7 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+
+.blur {
+  filter: blur(5px);
+}

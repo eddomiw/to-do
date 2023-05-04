@@ -7,47 +7,51 @@
     <title>To-Do List</title>
     <link rel="stylesheet" href="../src/css/reset.css" />
     <link rel="stylesheet" href="../src/css/main.css" />
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
   </head>
+
   <body>
+    <div class="form-container" style="display: none;">
+      <div class="form-title">
+        <div>Create New:</div>
+        <button class="close-form">X</button>
+      </div>
+      <input
+        type="text"
+        name="task"
+        id="task"
+        placeholder="Title: Learn why Adam is so cool"
+      />
+      <input
+        type="text"
+        name="details"
+        id="details"
+        placeholder="Details: e.g. hair, tight shoe laces, almonds "
+      />
+
+      <div class="date">
+        Due Date:
+        <input type="date" name="date" id="date" value="mm-dd-yyyy" />
+      </div>
+
+      <div id="priority">
+        Priority:
+        <button id="low" name="low" value="Low">Low</button>
+        <button id="medium" name="medium" value="Medium">Medium</button>
+        <button id="high" name="high" value="High">High</button>
+      </div>
+      <input
+        type="button"
+        name="add-to-tasks"
+        id="add-to-tasks"
+        value="Add to tasks"
+      />
+    </div>
     <header class="header">
       <img src="./../src/images/T.jpg" alt="Image of Letter T" />
       <h1>Todo List</h1>
     </header>
     <div class="body-container">
-      <div class="form-container">
-        <label for="task">Title:</label>
-        <input
-          type="text"
-          name="task"
-          id="task"
-          value="Learn why Adam is so cool"
-        />
-
-        <label for="details">Details:</label>
-        <input
-          type="text"
-          name="details"
-          id="details"
-          value="e.g. hair, tight shoe laces, almonds "
-        />
-
-        <div>Due Date:</div>
-        <input type="date" name="date" id="date" value="mm-dd-yyyy" />
-
-        <div>
-          Priority:
-          <input type="button" id="low" name="low" value="Low" />
-          <input type="button" id="medium" name="medium" value="Medium" />
-          <input type="button" id="high" name="high" value="High" />
-        </div>
-        <input
-          type="button"
-          name="add-to-tasks"
-          id="add-to-tasks"
-          value="Add to tasks"
-        />
-      </div>
       <nav class=".nav">
         <div class="inbox">
           <img src="../src/images/inbox-44.svg" alt="Inbox Image" />

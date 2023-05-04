@@ -26,3 +26,8 @@ nav {
     box-shadow: 3px 3px 10px rgba(114, 110, 110, 0.726);
   }
 }
+
+.addTask:active {
+  background-color: black;
+  color: white;
+}

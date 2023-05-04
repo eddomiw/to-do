@@ -4,8 +4,10 @@
   "description": "Apply webpack and SOLID principles to to-do list project",
   "main": "index.js",
   "private": true,
+  "watch": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.config"
   },
   "keywords": [],
   "author": "",
