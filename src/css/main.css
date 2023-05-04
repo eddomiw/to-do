@@ -16,6 +16,7 @@ nav {
 }
 nav div {
   display: flex;
+  gap: 10px;
 }
 nav img {
   height: 25px;
@@ -30,6 +31,15 @@ nav button {
   border: none;
   border-radius: 30px;
   box-shadow: 3px 3px 10px rgba(114, 110, 110, 0.726);
+}
+
+.form-container {
+  position: absolute;
+  border: 1px solid black;
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  top: 25%;
 }
 
 header {
