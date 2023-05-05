@@ -11,15 +11,15 @@
   </head>
 
   <body>
-    <div class="form-container" style="display: none;">
+    <div class="form-container" style="display: none">
       <div class="form-title">
         <div>Create New:</div>
         <button class="close-form">X</button>
       </div>
       <input
         type="text"
-        name="task"
-        id="task"
+        name="task-name"
+        id="task-name"
         placeholder="Title: Learn why Adam is so cool"
       />
       <input
@@ -40,12 +40,7 @@
         <button id="medium" name="medium" value="Medium">Medium</button>
         <button id="high" name="high" value="High">High</button>
       </div>
-      <input
-        type="button"
-        name="add-to-tasks"
-        id="add-to-tasks"
-        value="Add to tasks"
-      />
+      <button id="add-to-tasks">Add to Tasks</button>
     </div>
     <header class="header">
       <img src="./../src/images/T.jpg" alt="Image of Letter T" />
@@ -65,10 +60,11 @@
           <img src="../src/images/month.svg" alt="month Image" />
           <div>This Week</div>
         </div>
-        <button class="addTask">+</button>
+        <button class="addTaskBtn">+</button>
       </nav>
-      <div class="tasks">
+      <div class="tasks-container">
         <h2>Tasks</h2>
+        <div class="added-tasks"></div>
       </div>
     </div>
     <div class="footer">Copyright © 2023 eddomiw</div>

@@ -6,7 +6,7 @@ import {
   bodyContainer,
   footer,
   closeFormHandler,
-} from "./form.js";
+} from "./form-display.js";
 
 //When the user clicks the "Add Task" button, the form is displayed.
 addTask.addEventListener("click", () => {

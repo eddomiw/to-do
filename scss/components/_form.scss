@@ -16,12 +16,12 @@
 }
 
 .form-title,
-#task,
+#task-name,
 #details {
   border: none;
 }
 
-#task,
+#task-name,
 #details,
 .date,
 #priority,
@@ -41,7 +41,7 @@
   justify-content: space-between;
 }
 
-#task {
+#task-name {
   grid-row: 2/3;
   grid-column: 1/3;
 }
