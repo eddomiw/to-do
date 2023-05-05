@@ -1,4 +1,4 @@
-export const addTask = document.querySelector(".addTask");
+export const addTask = document.querySelector(".addTaskBtn");
 export const formContainer = document.querySelector(".form-container");
 export const closeForm = document.querySelector(".close-form");
 
