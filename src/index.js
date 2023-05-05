@@ -1,20 +1,12 @@
-//TODO: Transfer this functionality to a form.js
-
-const addTask = document.querySelector(".addTask");
-const formContainer = document.querySelector(".form-container");
-const closeForm = document.querySelector(".close-form");
-
-const header = document.querySelector(".header");
-const bodyContainer = document.querySelector(".body-container");
-const footer = document.querySelector(".footer");
-
-function closeFormHandler() {
-  formContainer.style.display = "none";
-  header.classList.remove("blur");
-  bodyContainer.classList.remove("blur");
-  footer.classList.remove("blur");
-  formContainer.style.pointerEvents = "none";
-}
+import {
+  addTask,
+  formContainer,
+  closeForm,
+  header,
+  bodyContainer,
+  footer,
+  closeFormHandler,
+} from "./form.js";
 
 //When the user clicks the "Add Task" button, the form is displayed.
 addTask.addEventListener("click", () => {

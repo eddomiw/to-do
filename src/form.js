@@ -1,10 +1,15 @@
-const addTask = document.querySelector(".addTask");
-const formContainer = document.querySelector(".form-container");
+export const addTask = document.querySelector(".addTask");
+export const formContainer = document.querySelector(".form-container");
+export const closeForm = document.querySelector(".close-form");
 
-export default addTask.addEventListener("click", () => {
-  if (formContainer.style.display === "none") {
-    container.style.display = "block";
-  } else {
-    formContainer.style.display = "none";
-  }
-});
+export const header = document.querySelector(".header");
+export const bodyContainer = document.querySelector(".body-container");
+export const footer = document.querySelector(".footer");
+
+export function closeFormHandler() {
+  formContainer.style.display = "none";
+  header.classList.remove("blur");
+  bodyContainer.classList.remove("blur");
+  footer.classList.remove("blur");
+  formContainer.style.pointerEvents = "none";
+}
