@@ -2,9 +2,10 @@
   position: absolute;
   border: 2px solid black;
   width: 50%;
-  height: 50%;
-  left: 25%;
-  top: 25%;
+  height: clamp(200px, 50%, 450px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.5fr 0.1fr 3fr 0.5fr 0.5fr;

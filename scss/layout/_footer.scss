@@ -1,8 +1,8 @@
 .footer {
   position: relative;
-  height: 35px;;
+  height: 35px;
   bottom: 0;
-  width: 100%;
+  width: max(320px, 100%);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -14,7 +14,6 @@ body {
 }
 
 nav {
-  position: relative;
   padding: 30px;
   background-color: rgb(217, 223, 230);
   grid-column: 1/2;
@@ -50,9 +49,10 @@ nav button {
   position: absolute;
   border: 2px solid black;
   width: 50%;
-  height: 50%;
-  left: 25%;
-  top: 25%;
+  height: clamp(200px, 50%, 450px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.5fr 0.1fr 3fr 0.5fr 0.5fr;
@@ -145,6 +145,7 @@ nav button {
 }
 
 header {
+  width: max(320px, 100%);
   padding: 10px;
   display: flex;
   justify-content: start;
@@ -162,7 +163,7 @@ header img {
   position: relative;
   height: 35px;
   bottom: 0;
-  width: 100%;
+  width: max(320px, 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,7 +173,7 @@ header img {
 
 .body-container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   font-size: 16px;
   grid-template-columns: 1fr 5fr;
