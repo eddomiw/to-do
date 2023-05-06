@@ -44,12 +44,17 @@ export function addTask() {
   newTaskDiv.classList.add("new-task");
 
   const checkBoxBtn = document.createElement("button");
+  checkBoxBtn.classList.add("checkbox-btn");
   const titleDisplay = document.createElement("div");
   titleDisplay.textContent = todoTask.task;
   const DetailsBtn = document.createElement("button");
+  DetailsBtn.textContent = "Details";
+  DetailsBtn.classList.add("details-btn");
   const dateDisplay = document.createElement("div");
   dateDisplay.textContent = todoTask.date;
   const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Delete";
+  deleteBtn.classList.add("delete-btn");
 
   newTaskDiv.appendChild(checkBoxBtn);
   newTaskDiv.appendChild(titleDisplay);

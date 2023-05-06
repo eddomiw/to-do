@@ -183,8 +183,21 @@ header img {
   grid-column: 2/3;
 }
 .tasks-container h2 {
-  font-size: 26px;
+  font-size: 2rem;
   font-weight: 200;
+}
+.tasks-container .new-task {
+  font-size: 1.25rem;
+  padding: 0.5em;
+  gap: 20px;
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 0.1fr 0.1fr 0.1fr;
+}
+.tasks-container .new-task button {
+  font-size: 1rem;
+  border-radius: 10px;
+  padding: 0.5em;
 }
 
 html,

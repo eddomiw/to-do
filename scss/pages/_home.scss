@@ -9,8 +9,22 @@
 .tasks-container {
   padding: 20px 40px;
   grid-column: 2/ 3;
+
   h2 {
-    font-size: 26px;
+    font-size: 2rem;
     font-weight: 200;
+  }
+  .new-task {
+    font-size: 1.25rem;
+    padding: 0.5em;
+    gap: 20px;
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 0.1fr 0.1fr 0.1fr;
+    button {
+      font-size: 1rem;
+      border-radius: 10px;
+      padding: 0.5em;
+    }
   }
 }
