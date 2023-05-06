@@ -6,25 +6,59 @@
   grid-template-columns: 1fr 5fr;
 }
 
+.low-priority {
+  border: 1px solid rgba(6, 107, 6, 0.877);
+}
+
+.medium-priority {
+  border: 1px solid rgba(204, 185, 14, 0.61);
+}
+
+.high-priority {
+  border: 1px solid red;
+}
+
 .tasks-container {
   padding: 20px 40px;
   grid-column: 2/ 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 0.1fr;
 
   h2 {
+    grid-row: 1/2;
+    grid-column: 1/2;
     font-size: 2rem;
     font-weight: 200;
   }
-  .new-task {
-    font-size: 1.25rem;
-    padding: 0.5em;
-    gap: 20px;
-    border: 1px solid red;
+
+  .added-tasks {
+    grid-column: 1/2;
+    gap: 1rem;
     display: grid;
-    grid-template-columns: 0.1fr 1fr 0.1fr 0.1fr 0.1fr;
-    button {
-      font-size: 1rem;
-      border-radius: 10px;
+    grid-row: 100px;
+    .new-task {
+      font-size: 1.05rem;
       padding: 0.5em;
+      gap: 20px;
+      display: grid;
+      grid-template-columns: 0.1fr 1fr 0.1fr 0.25fr 0.1fr;
+      .title-display {
+        display: flex;
+        align-items: center;
+      }
+      button {
+        font-size: 1rem;
+        border-radius: 10px;
+        padding: 0.5em;
+      }
+
+      .date-display,
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 }

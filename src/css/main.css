@@ -145,7 +145,7 @@ nav button {
 }
 
 header {
-  width: max(320px, 100%);
+  min-width: 320px;
   padding: 10px;
   display: flex;
   justify-content: start;
@@ -179,26 +179,58 @@ header img {
   grid-template-columns: 1fr 5fr;
 }
 
+.low-priority {
+  border: 1px solid rgba(6, 107, 6, 0.877);
+}
+
+.medium-priority {
+  border: 1px solid rgba(204, 185, 14, 0.61);
+}
+
+.high-priority {
+  border: 1px solid red;
+}
+
 .tasks-container {
   padding: 20px 40px;
   grid-column: 2/3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 0.1fr;
 }
 .tasks-container h2 {
+  grid-row: 1/2;
+  grid-column: 1/2;
   font-size: 2rem;
   font-weight: 200;
 }
-.tasks-container .new-task {
-  font-size: 1.25rem;
+.tasks-container .added-tasks {
+  grid-column: 1/2;
+  gap: 1rem;
+  display: grid;
+  grid-row: 100px;
+}
+.tasks-container .added-tasks .new-task {
+  font-size: 1.05rem;
   padding: 0.5em;
   gap: 20px;
-  border: 1px solid red;
   display: grid;
-  grid-template-columns: 0.1fr 1fr 0.1fr 0.1fr 0.1fr;
+  grid-template-columns: 0.1fr 1fr 0.1fr 0.25fr 0.1fr;
 }
-.tasks-container .new-task button {
+.tasks-container .added-tasks .new-task .title-display {
+  display: flex;
+  align-items: center;
+}
+.tasks-container .added-tasks .new-task button {
   font-size: 1rem;
   border-radius: 10px;
   padding: 0.5em;
+}
+.tasks-container .added-tasks .new-task .date-display,
+.tasks-container .added-tasks .new-task button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 html,

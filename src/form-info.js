@@ -5,8 +5,7 @@ export const mediumBtn = formContainer.querySelector("#medium");
 export const highBtn = formContainer.querySelector("#high");
 export const addToTasksBtn = formContainer.querySelector("#add-to-tasks");
 export const addedTasks = document.querySelector(".added-tasks");
-
-export const priority = "";
+let priority = null;
 
 //Update the priority of a task based on the user's button selection
 lowBtn.addEventListener("click", () => {
@@ -21,7 +20,6 @@ highBtn.addEventListener("click", () => {
   priority = "High";
 });
 //store the new task in class variable
-
 export class Task {
   constructor(task, details, date, priority) {
     this.task = task;
@@ -36,33 +34,45 @@ export function addTask() {
   const task = formContainer.querySelector("#task-name").value;
   const details = formContainer.querySelector("#details").value;
   const date = formContainer.querySelector("#date").value;
-  const todoTask = new Task(task, details, date, priority);
 
-  //Create a new display container element for each new task
+  if (priority !== null) {
+    const todoTask = new Task(task, details, date, priority);
 
-  const newTaskDiv = document.createElement("div");
-  newTaskDiv.classList.add("new-task");
+    //Create a new display container element for each new task
 
-  const checkBoxBtn = document.createElement("button");
-  checkBoxBtn.classList.add("checkbox-btn");
-  const titleDisplay = document.createElement("div");
-  titleDisplay.textContent = todoTask.task;
-  const DetailsBtn = document.createElement("button");
-  DetailsBtn.textContent = "Details";
-  DetailsBtn.classList.add("details-btn");
-  const dateDisplay = document.createElement("div");
-  dateDisplay.textContent = todoTask.date;
-  const deleteBtn = document.createElement("button");
-  deleteBtn.textContent = "Delete";
-  deleteBtn.classList.add("delete-btn");
+    const newTaskDiv = document.createElement("div");
+    newTaskDiv.classList.add("new-task");
+    if (todoTask.priority === "Low") {
+      newTaskDiv.classList.add("low-priority");
+    } else if (todoTask.priority === "Medium") {
+      newTaskDiv.classList.add("medium-priority");
+    } else if (todoTask.priority === "High") {
+      newTaskDiv.classList.add("high-priority");
+    }
 
-  newTaskDiv.appendChild(checkBoxBtn);
-  newTaskDiv.appendChild(titleDisplay);
-  newTaskDiv.appendChild(DetailsBtn);
-  newTaskDiv.appendChild(dateDisplay);
-  newTaskDiv.appendChild(deleteBtn);
+    const checkBoxBtn = document.createElement("button");
+    checkBoxBtn.classList.add("checkbox-btn");
+    const titleDisplay = document.createElement("div");
+    titleDisplay.textContent = todoTask.task;
+    titleDisplay.classList.add("title-display");
+    const DetailsBtn = document.createElement("button");
+    DetailsBtn.textContent = "Details";
+    DetailsBtn.classList.add("details-btn");
+    const dateDisplay = document.createElement("div");
+    dateDisplay.textContent = todoTask.date;
+    dateDisplay.classList.add("date-display");
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.classList.add("delete-btn");
 
-  addedTasks.appendChild(newTaskDiv);
+    newTaskDiv.appendChild(checkBoxBtn);
+    newTaskDiv.appendChild(titleDisplay);
+    newTaskDiv.appendChild(DetailsBtn);
+    newTaskDiv.appendChild(dateDisplay);
+    newTaskDiv.appendChild(deleteBtn);
+
+    addedTasks.appendChild(newTaskDiv);
+  }
 
   // //Create a details div element for each new task
   // const newTaskDivDetails = document.createElement("div");
