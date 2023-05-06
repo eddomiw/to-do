@@ -1,4 +1,4 @@
-export const addTask = document.querySelector(".addTaskBtn");
+export const addTaskBtn = document.querySelector(".addTaskBtn");
 export const formContainer = document.querySelector(".form-container");
 export const closeForm = document.querySelector(".close-form");
 
@@ -13,3 +13,20 @@ export function closeFormHandler() {
   footer.classList.remove("blur");
   formContainer.style.pointerEvents = "none";
 }
+
+//When the user clicks the "Add Task" button, the form is displayed.
+addTaskBtn.addEventListener("click", () => {
+  if (formContainer.style.display == "none") {
+    formContainer.style.display = "grid";
+    header.classList.add("blur");
+    bodyContainer.classList.add("blur");
+    footer.classList.add("blur");
+    formContainer.style.pointerEvents = "auto";
+    formContainer.style.zIndex = "1";
+  } else {
+    closeFormHandler();
+  }
+});
+
+// //When the user clicks the "Close" button, the form is hidden.
+closeForm.addEventListener("click", closeFormHandler);
