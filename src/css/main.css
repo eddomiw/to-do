@@ -179,16 +179,23 @@ header img {
   grid-template-columns: 1fr 5fr;
 }
 
+.low-priority,
+.medium-priority,
+.high-priority {
+  border: 0.5px solid black;
+  border-left: 4px solid;
+}
+
 .low-priority {
-  border: 1px solid rgba(6, 107, 6, 0.877);
+  border-left-color: rgba(6, 107, 6, 0.877);
 }
 
 .medium-priority {
-  border: 1px solid rgba(204, 185, 14, 0.61);
+  border-left-color: rgba(204, 185, 14, 0.61);
 }
 
 .high-priority {
-  border: 1px solid red;
+  border-left-color: red;
 }
 
 .tasks-container {
@@ -215,7 +222,7 @@ header img {
   padding: 0.5em;
   gap: 20px;
   display: grid;
-  grid-template-columns: 0.1fr 1fr 0.1fr 0.25fr 0.1fr;
+  grid-template-columns: 0.1fr 1fr 0.1fr 0.25fr 0.1fr 0.1fr;
 }
 .tasks-container .added-tasks .new-task .title-display {
   display: flex;

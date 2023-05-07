@@ -55,20 +55,32 @@ export function addTask() {
     const titleDisplay = document.createElement("div");
     titleDisplay.textContent = todoTask.task;
     titleDisplay.classList.add("title-display");
-    const DetailsBtn = document.createElement("button");
-    DetailsBtn.textContent = "Details";
-    DetailsBtn.classList.add("details-btn");
+    const detailsBtn = document.createElement("button");
+    detailsBtn.textContent = "Details";
+    detailsBtn.classList.add("details-btn");
     const dateDisplay = document.createElement("div");
     dateDisplay.textContent = todoTask.date;
     dateDisplay.classList.add("date-display");
+
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    editBtn.classList.add("edit-btn");
+    editBtn.addEventListener("click", () => {
+      // Open a form or modal for editing the task properties
+      // Retrieve the corresponding Task object from the tasks array using its id
+      // Update the Task object properties based on the user input
+      // Update the task element to display the updated properties
+    });
+
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.classList.add("delete-btn");
 
     newTaskDiv.appendChild(checkBoxBtn);
     newTaskDiv.appendChild(titleDisplay);
-    newTaskDiv.appendChild(DetailsBtn);
+    newTaskDiv.appendChild(detailsBtn);
     newTaskDiv.appendChild(dateDisplay);
+    newTaskDiv.appendChild(editBtn);
     newTaskDiv.appendChild(deleteBtn);
 
     addedTasks.appendChild(newTaskDiv);
