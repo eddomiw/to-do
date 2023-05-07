@@ -30,7 +30,7 @@ export class Task {
     this.priority = priority;
   }
   // Define getter and setter methods for each property
-
+  //FIXME: NOT USING REAL GETTERS AND SETTERS, AND UPDATE EDIT BUTTON ///////////////////////////
   getTask() {
     return this.task;
   }
@@ -106,13 +106,61 @@ export function addTask() {
     const editBtn = document.createElement("button");
     editBtn.textContent = "Edit";
     editBtn.classList.add("edit-btn");
+
+    //TODO: MAKE SURE that the edit button displays forms/////////////////////////////////
     editBtn.addEventListener("click", () => {
+      const taskId = todoTask.getId();
+      const taskDiv = newTaskDiv.querySelector(".title-display");
+      const detailsDiv = newTaskDiv.querySelector(".details-btn");
+      const dateDiv = newTaskDiv.querySelector(".date-display");
+
       // Open a form or modal for editing the task properties
       // Retrieve the corresponding Task object from the tasks array using its id
-      // Update the Task object properties based on the user input
-      // Update the task element to display the updated properties
-    });
+      const taskToUpdate = tasks.find((task) => task.getId() === taskId);
 
+      // Update the Task object properties based on the user input
+      const newTaskName = prompt("Enter new task name", taskToUpdate.getTask());
+      if (newTaskName !== null) {
+        taskToUpdate.setTask(newTaskName);
+        taskDiv.textContent = newTaskName;
+      }
+
+      const newTaskDetails = prompt(
+        "Enter new task details",
+        taskToUpdate.getDetails()
+      );
+      if (newTaskDetails !== null) {
+        taskToUpdate.setDetails(newTaskDetails);
+        detailsDiv.textContent = "Details";
+      }
+
+      const newTaskDate = prompt("Enter new task date", taskToUpdate.getDate());
+      if (newTaskDate !== null) {
+        taskToUpdate.setDate(newTaskDate);
+        dateDiv.textContent = newTaskDate;
+      }
+
+      const newPriority = prompt(
+        "Enter new task priority (Low/Medium/High)",
+        taskToUpdate.getPriority()
+      );
+      if (newPriority !== null) {
+        taskToUpdate.setPriority(newPriority);
+        newTaskDiv.classList.remove(
+          "low-priority",
+          "medium-priority",
+          "high-priority"
+        );
+        if (newPriority === "Low") {
+          newTaskDiv.classList.add("low-priority");
+        } else if (newPriority === "Medium") {
+          newTaskDiv.classList.add("medium-priority");
+        } else if (newPriority === "High") {
+          newTaskDiv.classList.add("high-priority");
+        }
+      }
+    });
+    ////////////////////////////////////////////////////////////////////////////////
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.classList.add("delete-btn");
