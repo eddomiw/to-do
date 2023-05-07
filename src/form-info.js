@@ -5,7 +5,7 @@ export const mediumBtn = formContainer.querySelector("#medium");
 export const highBtn = formContainer.querySelector("#high");
 export const addToTasksBtn = formContainer.querySelector("#add-to-tasks");
 export const addedTasks = document.querySelector(".added-tasks");
-let priority = null;
+export let priority = null;
 
 //Update the priority of a task based on the user's button selection
 lowBtn.addEventListener("click", () => {
@@ -19,15 +19,55 @@ mediumBtn.addEventListener("click", () => {
 highBtn.addEventListener("click", () => {
   priority = "High";
 });
+
 //store the new task in class variable
 export class Task {
   constructor(task, details, date, priority) {
+    this.id = Math.random().toString(36).substr(2, 9);
     this.task = task;
     this.details = details;
     this.date = date;
     this.priority = priority;
   }
+  // Define getter and setter methods for each property
+
+  getTask() {
+    return this.task;
+  }
+
+  setTask(newTask) {
+    this.task = newTask;
+  }
+
+  getDetails() {
+    return this.details;
+  }
+
+  setDetails(newDetails) {
+    this.details = newDetails;
+  }
+
+  getDate() {
+    return this.date;
+  }
+
+  setDate(newDate) {
+    this.date = newDate;
+  }
+
+  getPriority() {
+    return this.priority;
+  }
+
+  setPriority(newPriority) {
+    this.priority = newPriority;
+  }
+
+  getId() {
+    return this.id;
+  }
 }
+const tasks = []; // Array to store all created tasks
 
 //send new task to the server
 export function addTask() {
@@ -37,6 +77,7 @@ export function addTask() {
 
   if (priority !== null) {
     const todoTask = new Task(task, details, date, priority);
+    tasks.push(todoTask); // Add the new task to the tasks array
 
     //Create a new display container element for each new task
 
