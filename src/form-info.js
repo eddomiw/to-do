@@ -109,9 +109,6 @@ export function addTask() {
     //TODO: MAKE SURE that the edit button displays forms/////////////////////////////////
     editBtn.addEventListener("click", () => {
       const taskId = todoTask.id;
-      const taskDiv = newTaskDiv.querySelector(".title-display");
-      const detailsDiv = newTaskDiv.querySelector(".details-btn");
-      const dateDiv = newTaskDiv.querySelector(".date-display");
 
       // Open a form or modal for editing the task properties
       // Retrieve the corresponding Task object from the tasks array using its id
@@ -162,6 +159,10 @@ export function addTask() {
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.classList.add("delete-btn");
+    deleteBtn.addEventListener("click", () => {
+      tasks.splice(tasks.indexOf(todoTask), 1);
+      addedTasks.removeChild(newTaskDiv);
+    });
 
     newTaskDiv.appendChild(checkBoxBtn);
     newTaskDiv.appendChild(titleDisplay);
