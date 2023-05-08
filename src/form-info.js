@@ -24,46 +24,46 @@ highBtn.addEventListener("click", () => {
 export class Task {
   constructor(task, details, date, priority) {
     this.id = Math.random().toString(36).substr(2, 9);
-    this.task = task;
-    this.details = details;
-    this.date = date;
-    this.priority = priority;
+    this._task = task;
+    this._details = details;
+    this._date = date;
+    this._priority = priority;
   }
   // Define getter and setter methods for each property
   //FIXME: NOT USING REAL GETTERS AND SETTERS, AND UPDATE EDIT BUTTON ///////////////////////////
-  getTask() {
-    return this.task;
+  get task() {
+    return this._task;
   }
 
-  setTask(newTask) {
-    this.task = newTask;
+  set task(newTask) {
+    this._task = newTask;
   }
 
-  getDetails() {
-    return this.details;
+  get details() {
+    return this._details;
   }
 
-  setDetails(newDetails) {
-    this.details = newDetails;
+  set details(newDetails) {
+    this._details = newDetails;
   }
 
-  getDate() {
-    return this.date;
+  get date() {
+    return this._date;
   }
 
-  setDate(newDate) {
-    this.date = newDate;
+  set date(newDate) {
+    this._date = newDate;
   }
 
-  getPriority() {
-    return this.priority;
+  get priority() {
+    return this._priority;
   }
 
-  setPriority(newPriority) {
-    this.priority = newPriority;
+  set priority(newPriority) {
+    this._priority = newPriority;
   }
 
-  getId() {
+  get id() {
     return this.id;
   }
 }
@@ -109,6 +109,7 @@ export function addTask() {
 
     //TODO: MAKE SURE that the edit button displays forms/////////////////////////////////
     editBtn.addEventListener("click", () => {
+      //FIXME: GET.ID
       const taskId = todoTask.getId();
       const taskDiv = newTaskDiv.querySelector(".title-display");
       const detailsDiv = newTaskDiv.querySelector(".details-btn");
@@ -116,35 +117,43 @@ export function addTask() {
 
       // Open a form or modal for editing the task properties
       // Retrieve the corresponding Task object from the tasks array using its id
+      //FIXME: GET ID
       const taskToUpdate = tasks.find((task) => task.getId() === taskId);
 
       // Update the Task object properties based on the user input
+      //FIXME: GET TASK
       const newTaskName = prompt("Enter new task name", taskToUpdate.getTask());
       if (newTaskName !== null) {
+        //FIXME: SET TASK
         taskToUpdate.setTask(newTaskName);
         taskDiv.textContent = newTaskName;
       }
 
       const newTaskDetails = prompt(
         "Enter new task details",
+        //FIXME: GET DETAILS
         taskToUpdate.getDetails()
       );
       if (newTaskDetails !== null) {
+        //FIXME: SET DETAILS
         taskToUpdate.setDetails(newTaskDetails);
         detailsDiv.textContent = "Details";
       }
-
+      //FIXME: GET DATE
       const newTaskDate = prompt("Enter new task date", taskToUpdate.getDate());
       if (newTaskDate !== null) {
+        //FIXME: SET DATE
         taskToUpdate.setDate(newTaskDate);
         dateDiv.textContent = newTaskDate;
       }
 
       const newPriority = prompt(
         "Enter new task priority (Low/Medium/High)",
+        //FIXME: GET PRIORITY
         taskToUpdate.getPriority()
       );
       if (newPriority !== null) {
+        //FIXME: SET PRIORITY
         taskToUpdate.setPriority(newPriority);
         newTaskDiv.classList.remove(
           "low-priority",
@@ -160,7 +169,7 @@ export function addTask() {
         }
       }
     });
-    ////////////////////////////////////////////////////////////////////////////////
+    //TODO:^^^^^^^^^^^^^^^^////////////////////////////////////////////////////////////////////////////////
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.classList.add("delete-btn");
