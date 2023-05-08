@@ -1,5 +1,4 @@
 import { formContainer } from "./form-display.js";
-import editTask from "./edit-task.js";
 
 export const lowBtn = formContainer.querySelector("#low");
 export const mediumBtn = formContainer.querySelector("#medium");
