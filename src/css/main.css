@@ -245,6 +245,7 @@ header img {
   background-color: rgb(217, 223, 230);
   font-size: 2rem;
   border: 2px solid black;
+  border-radius: 15px;
   width: 50%;
   height: clamp(200px, 35%, 450px);
   left: 50%;
@@ -257,12 +258,14 @@ header img {
 .new-task-details button {
   align-self: end;
   font-size: 1rem;
-  border-radius: 2px;
+  border-top-right-radius: 15px;
   padding: 0.5em;
 }
 
 .header-details {
   background-color: black;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   display: flex;
   justify-content: end;
 }
@@ -286,7 +289,8 @@ header img {
   grid-template-columns: 1fr;
   grid-template-rows: 100px 0.05fr;
 }
-.tasks-container h2 {
+
+h2 {
   grid-row: 1/2;
   grid-column: 1/2;
   font-size: 2rem;

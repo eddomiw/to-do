@@ -4,6 +4,7 @@
   font-size: 2rem;
   //   padding: 0.25em;
   border: 2px solid black;
+  border-radius: 15px;
   width: 50%;
   //TODO: form is moving as elements are added to the container
   height: clamp(200px, 35%, 450px);
@@ -16,13 +17,15 @@
   button {
     align-self: end;
     font-size: 1rem;
-    border-radius: 2px;
+    border-top-right-radius: 15px;
     padding: 0.5em;
   }
 }
 
 .header-details {
   background-color: black;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   display: flex;
   justify-content: end;
 }
