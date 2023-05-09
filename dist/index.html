@@ -11,10 +11,10 @@
   </head>
 
   <body>
-    <div class="form-container" style="display: none">
+    <form class="form-container" style="display: none">
       <div class="form-title">
         <div>Create New:</div>
-        <button class="close-form">X</button>
+        <button type="button" class="close-form">X</button>
       </div>
       <input
         type="text"
@@ -34,12 +34,14 @@
 
       <div id="priority">
         Priority:
-        <button id="low" name="low" value="Low">Low</button>
-        <button id="medium" name="medium" value="Medium">Medium</button>
-        <button id="high" name="high" value="High">High</button>
+        <button type="button" id="low" name="low" value="Low">Low</button>
+        <button type="button" id="medium" name="medium" value="Medium">
+          Medium
+        </button>
+        <button type="button" id="high" name="high" value="High">High</button>
       </div>
-      <button id="add-to-tasks">Add to Tasks</button>
-    </div>
+      <button type="button" id="add-to-tasks">Add to Tasks</button>
+    </form>
 
     <header class="header">
       <img src="./../src/images/T.jpg" alt="Image of Letter T" />

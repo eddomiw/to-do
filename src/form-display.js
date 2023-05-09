@@ -12,6 +12,7 @@ export function closeFormHandler() {
   bodyContainer.classList.remove("blur");
   footer.classList.remove("blur");
   formContainer.style.pointerEvents = "none";
+  formContainer.reset();
 }
 
 //When the user clicks the "Add Task" button, the form is displayed.
