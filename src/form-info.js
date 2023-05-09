@@ -141,6 +141,7 @@ export function addTask() {
       if (newTaskName !== null) {
         taskToUpdate.task = newTaskName;
         titleDisplay.textContent = newTaskName;
+        taskDiv.textContent = `Task: ${newTaskName}`;
       }
 
       const newTaskDetails = prompt(
@@ -150,11 +151,13 @@ export function addTask() {
       if (newTaskDetails !== null) {
         taskToUpdate.details = newTaskDetails;
         detailsBtn.textContent = "Details";
+        detailsDiv.textContent = `Details: ${newTaskDetails}`;
       }
       const newTaskDate = prompt("Enter new task date", taskToUpdate.date);
       if (newTaskDate !== null) {
         taskToUpdate.date = newTaskDate;
-        dateDiv.textContent = newTaskDate;
+        dateDivDetails.textContent = newTaskDate;
+        dateDivDetails.textContent = `Date: ${newTaskDate}`;
       }
 
       const newPriority = prompt(
@@ -170,10 +173,13 @@ export function addTask() {
         );
         if (newPriority === "Low") {
           newTaskDiv.classList.add("low-priority");
+          priorityDiv.textContent = "Priority: Low";
         } else if (newPriority === "Medium") {
           newTaskDiv.classList.add("medium-priority");
+          priorityDiv.textContent = "Priority: Medium";
         } else if (newPriority === "High") {
           newTaskDiv.classList.add("high-priority");
+          priorityDiv.textContent = "Priority: High";
         }
       }
     });
@@ -185,12 +191,16 @@ export function addTask() {
     deleteBtn.addEventListener("click", () => {
       tasks.splice(tasks.indexOf(todoTask), 1);
       addedTasks.removeChild(newTaskDiv);
+      detailsDisplayContainer.removeChild(newTaskDivDetails);
     });
 
     // Creates DETAILS DISPLAY
     //Create a details div element for each new task
     const newTaskDivDetails = document.createElement("div");
     newTaskDivDetails.setAttribute("style", "display: none;");
+    //header for details display
+    const headerDetails = document.createElement("div");
+    headerDetails.classList.add("header-details");
     //Add close button for each details display
     //Close the details display
     function closeDetails() {
@@ -212,22 +222,23 @@ export function addTask() {
     const detailsDiv = document.createElement("div");
     detailsDiv.textContent = `Details: ${todoTask.details}`;
 
-    const dateDiv = document.createElement("div");
-    dateDiv.textContent = `Date: ${todoTask.date}`;
+    const dateDivDetails = document.createElement("div");
+    dateDivDetails.textContent = `Date: ${todoTask.date}`;
 
     const priorityDiv = document.createElement("div");
     priorityDiv.textContent = `Priority: ${todoTask.priority}`;
 
     // Add each div element to the details section of newTaskDiv
-    newTaskDivDetails.appendChild(closeDetailsBtn);
+    headerDetails.appendChild(closeDetailsBtn);
+    newTaskDivDetails.appendChild(headerDetails);
     newTaskDivDetails.appendChild(taskDiv);
     newTaskDivDetails.appendChild(detailsDiv);
-    newTaskDivDetails.appendChild(dateDiv);
+    newTaskDivDetails.appendChild(dateDivDetails);
     newTaskDivDetails.appendChild(priorityDiv);
 
-    //Add newTaskDiv to addedTasks
+    //append child to div meant for displaying task details
     detailsDisplayContainer.appendChild(newTaskDivDetails);
-
+    //Add newTaskDiv to addedTasks
     newTaskDiv.appendChild(checkBoxBtn);
     newTaskDiv.appendChild(titleDisplay);
     newTaskDiv.appendChild(detailsBtn);

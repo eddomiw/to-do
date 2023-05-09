@@ -173,14 +173,33 @@ header img {
 
 .new-task-details {
   position: absolute;
+  background-color: rgb(217, 223, 230);
+  font-size: 2rem;
   border: 2px solid black;
   width: 50%;
-  height: clamp(200px, 50%, 450px);
+  height: clamp(200px, 35%, 450px);
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+.new-task-details button {
+  align-self: end;
+  font-size: 1rem;
+  border-radius: 2px;
+  padding: 0.5em;
+}
+
+.header-details {
+  background-color: black;
+  display: flex;
+  justify-content: end;
+}
+
+.header-details ~ div {
+  padding: 10px;
 }
 
 .body-container {
@@ -215,7 +234,7 @@ header img {
   grid-column: 2/3;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 100px 0.1fr;
+  grid-template-rows: 100px 0.05fr;
 }
 .tasks-container h2 {
   grid-row: 1/2;
