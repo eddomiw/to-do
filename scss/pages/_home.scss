@@ -6,23 +6,7 @@
   grid-template-columns: 1fr 5fr;
 }
 
-.low-priority,
-.medium-priority,
-.high-priority {
-  border: 0.5px solid black;
-  border-left: 4px solid;
-}
-.low-priority {
-  border-left-color: rgba(6, 107, 6, 0.877);
-}
 
-.medium-priority {
-  border-left-color: rgba(204, 185, 14, 0.61);
-}
-
-.high-priority {
-  border-left-color: red;
-}
 
 .tasks-container {
   padding: 20px 40px;
@@ -36,35 +20,5 @@
     grid-column: 1/2;
     font-size: 2rem;
     font-weight: 200;
-  }
-
-  .added-tasks {
-    grid-column: 1/2;
-    gap: 1rem;
-    display: grid;
-    grid-row: 100px;
-    .new-task {
-      font-size: 1.05rem;
-      padding: 0.5em;
-      gap: 20px;
-      display: grid;
-      grid-template-columns: 0.1fr 1fr 0.1fr 0.25fr 0.1fr 0.1fr;
-      .title-display {
-        display: flex;
-        align-items: center;
-      }
-      button {
-        font-size: 1rem;
-        border-radius: 10px;
-        padding: 0.5em;
-      }
-
-      .date-display,
-      button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
   }
 }

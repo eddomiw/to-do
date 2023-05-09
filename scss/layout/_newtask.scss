@@ -1,0 +1,68 @@
+.low-priority,
+.medium-priority,
+.high-priority {
+  border: 0.5px solid black;
+  border-radius: 10px;
+  border-left: 4px solid;
+  box-shadow: 1px 1px 3px;
+}
+.low-priority {
+  border-left-color: rgba(6, 107, 6, 0.877);
+}
+
+.medium-priority {
+  border-left-color: rgba(204, 185, 14, 0.61);
+}
+
+.high-priority {
+  border-left-color: red;
+}
+
+.added-tasks {
+  grid-column: 1/2;
+  gap: 1rem;
+  display: grid;
+  grid-row: 100px;
+  .new-task {
+    font-size: 1.05rem;
+    padding: 0.5em;
+    gap: 20px;
+    display: grid;
+    transition: 0.5s ease;
+    grid-template-columns: 0.1fr 1fr 0.1fr 0.25fr 0.1fr 0.1fr;
+    &:hover {
+      transform: scale(1.02);
+      -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+    }
+    .title-display {
+      display: flex;
+      align-items: center;
+    }
+    button {
+      font-size: 1rem;
+      border-radius: 10px;
+      padding: 0.5em;
+    }
+
+    .date-display,
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .checkbox-btn {
+      align-self: center;
+      border-radius: 1px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.checkmark {
+  background-image: url("../../src/images/checkmark.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

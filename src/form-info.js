@@ -100,6 +100,10 @@ export function addTask() {
 
     const checkBoxBtn = document.createElement("button");
     checkBoxBtn.classList.add("checkbox-btn");
+    checkBoxBtn.addEventListener("click", function () {
+      checkBoxBtn.classList.toggle("checkmark");
+    });
+
     const titleDisplay = document.createElement("div");
     titleDisplay.textContent = todoTask.task;
     titleDisplay.classList.add("title-display");
