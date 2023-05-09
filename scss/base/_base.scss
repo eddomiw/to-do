@@ -9,6 +9,6 @@ body {
   min-height: 100vh;
 }
 
-.blur {
+.blur:not(.new-task-details) {
   filter: blur(5px);
 }

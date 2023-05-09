@@ -1,0 +1,12 @@
+.new-task-details {
+  position: absolute;
+  border: 2px solid black;
+  width: 50%;
+  //TODO: form is moving as elements are added to the container
+  height: clamp(200px, 50%, 450px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
