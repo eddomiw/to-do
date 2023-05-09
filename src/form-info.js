@@ -28,15 +28,6 @@ highBtn.addEventListener("click", () => {
   priority = "High";
 });
 
-//Close the details display
-function closeDetails() {
-  newTaskDivDetails.style.display = "none";
-  header.classList.remove("blur");
-  bodyContainer.classList.remove("blur");
-  footer.classList.remove("blur");
-  newTaskDivDetails.style.pointerEvents = "none";
-}
-
 //store the new task in class variable
 export class Task {
   constructor(task, details, date, priority) {
@@ -200,7 +191,20 @@ export function addTask() {
     //Create a details div element for each new task
     const newTaskDivDetails = document.createElement("div");
     newTaskDivDetails.setAttribute("style", "display: none;");
+    //Add close button for each details display
+    //Close the details display
+    function closeDetails() {
+      newTaskDivDetails.style.display = "none";
+      header.classList.remove("blur");
+      bodyContainer.classList.remove("blur");
+      footer.classList.remove("blur");
+      newTaskDivDetails.style.pointerEvents = "none";
+    }
 
+    const closeDetailsBtn = document.createElement("button");
+    closeDetailsBtn.textContent = "X";
+    closeDetailsBtn.setAttribute("style", "text-align:end;");
+    closeDetailsBtn.addEventListener("click", closeDetails);
     // Create a new div element for each task property
     const taskDiv = document.createElement("div");
     taskDiv.textContent = `Task: ${todoTask.task}`;
@@ -215,6 +219,7 @@ export function addTask() {
     priorityDiv.textContent = `Priority: ${todoTask.priority}`;
 
     // Add each div element to the details section of newTaskDiv
+    newTaskDivDetails.appendChild(closeDetailsBtn);
     newTaskDivDetails.appendChild(taskDiv);
     newTaskDivDetails.appendChild(detailsDiv);
     newTaskDivDetails.appendChild(dateDiv);
