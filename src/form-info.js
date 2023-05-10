@@ -128,6 +128,7 @@ export function addTask() {
     const dateDisplay = document.createElement("div");
     dateDisplay.textContent = todoTask.date;
     dateDisplay.classList.add("date-display");
+    const dateFormatRegex = /^\d{4}-\d{2}-\d{2}$/;
 
     //edit the task details
     const editBtn = document.createElement("button");
@@ -142,49 +143,63 @@ export function addTask() {
 
       // Update the Task object properties based on the user input
       const newTaskName = prompt("Enter new task name", taskToUpdate.task);
-      if (newTaskName !== null) {
-        taskToUpdate.task = newTaskName;
-        titleDisplay.textContent = newTaskName;
-        taskDiv.textContent = `Task: ${newTaskName}`;
+      if (newTaskName === null) {
+        return;
       }
+      taskToUpdate.task = newTaskName;
+      titleDisplay.textContent = newTaskName;
+      taskDiv.textContent = `Task: ${newTaskName}`;
 
       const newTaskDetails = prompt(
         "Enter new task details",
         taskToUpdate.details
       );
-      if (newTaskDetails !== null) {
-        taskToUpdate.details = newTaskDetails;
-        detailsBtn.textContent = "Details";
-        detailsDiv.textContent = `Details: ${newTaskDetails}`;
+      if (newTaskDetails === null) {
+        return;
       }
-      const newTaskDate = prompt("Enter new task date", taskToUpdate.date);
-      if (newTaskDate !== null) {
-        taskToUpdate.date = newTaskDate;
-        dateDivDetails.textContent = newTaskDate;
-        dateDivDetails.textContent = `Date: ${newTaskDate}`;
+      taskToUpdate.details = newTaskDetails;
+      detailsBtn.textContent = "Details";
+      detailsDiv.textContent = `Details: ${newTaskDetails}`;
+
+      let newTaskDate = "";
+      while (newTaskDate === "" || !dateFormatRegex.test(newTaskDate)) {
+        newTaskDate = prompt(
+          "Enter new task date (yyyy-mm-dd)",
+          taskToUpdate.date
+        );
+        if (newTaskDate === null) {
+          return;
+        } else if (!dateFormatRegex.test(newTaskDate)) {
+          alert("Date must be in the format yyyy-mm-dd");
+        }
       }
+
+      taskToUpdate.date = newTaskDate;
+      dateDisplay.textContent = newTaskDate;
+      dateDivDetails.textContent = `Date: ${newTaskDate}`;
 
       const newPriority = prompt(
         "Enter new task priority (Low/Medium/High)",
         taskToUpdate.priority
       );
-      if (newPriority !== null) {
-        taskToUpdate.priority = newPriority;
-        newTaskDiv.classList.remove(
-          "low-priority",
-          "medium-priority",
-          "high-priority"
-        );
-        if (newPriority === "Low") {
-          newTaskDiv.classList.add("low-priority");
-          priorityDiv.textContent = "Priority: Low";
-        } else if (newPriority === "Medium") {
-          newTaskDiv.classList.add("medium-priority");
-          priorityDiv.textContent = "Priority: Medium";
-        } else if (newPriority === "High") {
-          newTaskDiv.classList.add("high-priority");
-          priorityDiv.textContent = "Priority: High";
-        }
+      if (newPriority === null) {
+        return;
+      }
+      taskToUpdate.priority = newPriority;
+      newTaskDiv.classList.remove(
+        "low-priority",
+        "medium-priority",
+        "high-priority"
+      );
+      if (newPriority === "Low") {
+        newTaskDiv.classList.add("low-priority");
+        priorityDiv.textContent = "Priority: Low";
+      } else if (newPriority === "Medium") {
+        newTaskDiv.classList.add("medium-priority");
+        priorityDiv.textContent = "Priority: Medium";
+      } else if (newPriority === "High") {
+        newTaskDiv.classList.add("high-priority");
+        priorityDiv.textContent = "Priority: High";
       }
     });
 
