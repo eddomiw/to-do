@@ -17,10 +17,5 @@ import {
   addedTasks,
   Task,
   addTask,
+  inbox,
 } from "./form-info.js";
-
-
-
-
-
-

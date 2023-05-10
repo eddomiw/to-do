@@ -1,6 +1,6 @@
 nav {
-  // position: relative;
   padding: 30px;
+  padding-top: 55px;
   background-color: rgb(217, 223, 230);
   grid-column: 1/ 2;
   display: flex;
@@ -8,6 +8,7 @@ nav {
   gap: 30px;
   div {
     display: flex;
+    align-items: center;
     gap: 10px;
   }
   img {
@@ -23,6 +24,10 @@ nav {
     border: none;
     border-radius: 30px;
     box-shadow: 3px 3px 10px rgba(114, 110, 110, 0.726);
+  }
+  .inbox-count {
+    font-size: 1.25rem;
+    font-weight: 900;
   }
 }
 

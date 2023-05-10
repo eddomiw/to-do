@@ -1,11 +1,11 @@
 .new-task-details {
   position: absolute;
-  background-color: rgb(217, 223, 230);
+  background-color: rgb(238, 238, 238);
   font-size: 2rem;
-  //   padding: 0.25em;
   border: 2px solid black;
   border-radius: 15px;
   width: 50%;
+  box-shadow: -1px 2px 3px 2px rgb(173, 171, 167);
   //TODO: form is moving as elements are added to the container
   height: clamp(200px, 35%, 450px);
   left: 50%;

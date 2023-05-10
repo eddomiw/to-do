@@ -21,10 +21,12 @@
         name="task-name"
         id="task-name"
         placeholder="Title: Learn why Adam is so cool"
+        minlength="3"
       />
       <textarea
         id="details"
         placeholder="Details: e.g. hair, tight shoe laces, almonds "
+        minlength="1"
       ></textarea>
 
       <div class="date">
@@ -52,14 +54,7 @@
         <div class="inbox">
           <img src="../src/images/inbox-44.svg" alt="Inbox Image" />
           <div>Inbox</div>
-        </div>
-        <div class="today">
-          <img src="../src/images/today.svg" alt="Today Image" />
-          <div>Today</div>
-        </div>
-        <div class="week">
-          <img src="../src/images/month.svg" alt="month Image" />
-          <div>This Week</div>
+          <div class="inbox-count"></div>
         </div>
         <button class="addTaskBtn">+</button>
       </nav>

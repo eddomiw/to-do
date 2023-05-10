@@ -5,6 +5,7 @@ import {
   footer,
 } from "./form-display.js";
 
+export let inbox = document.querySelector(".inbox-count");
 export const lowBtn = formContainer.querySelector("#low");
 export const mediumBtn = formContainer.querySelector("#medium");
 export const highBtn = formContainer.querySelector("#high");
@@ -85,6 +86,8 @@ export function addTask() {
   if (priority !== null) {
     const todoTask = new Task(task, details, date, priority);
     tasks.push(todoTask); // Add the new task to the tasks array
+    let inboxCount = tasks.length;
+    inbox.textContent = inboxCount;
 
     //Create a new display container element for each new task
 
@@ -111,7 +114,7 @@ export function addTask() {
     detailsBtn.textContent = "Details";
     detailsBtn.classList.add("details-btn");
 
-    //TODO: DISPLAY DETAILS OF NEW TASK
+    //DISPLAY DETAILS OF NEW TASK
     detailsBtn.addEventListener("click", () => {
       if (newTaskDivDetails.style.display == "none") {
         newTaskDivDetails.classList.add("new-task-details");
@@ -130,14 +133,14 @@ export function addTask() {
     dateDisplay.classList.add("date-display");
     const dateFormatRegex = /^\d{4}-\d{2}-\d{2}$/;
 
-    //edit the task details
+    //EDIT TASK DETAILS
     const editBtn = document.createElement("button");
     editBtn.textContent = "Edit";
     editBtn.classList.add("edit-btn");
     editBtn.addEventListener("click", () => {
       const taskId = todoTask.id;
 
-      // Open a form or modal for editing the task properties
+      // Open a form for editing the task properties
       // Retrieve the corresponding Task object from the tasks array using its id
       const taskToUpdate = tasks.find((task) => task.id === taskId);
 
@@ -211,6 +214,8 @@ export function addTask() {
       tasks.splice(tasks.indexOf(todoTask), 1);
       addedTasks.removeChild(newTaskDiv);
       detailsDisplayContainer.removeChild(newTaskDivDetails);
+      let inboxCount = tasks.length;
+      inbox.textContent = inboxCount;
     });
 
     // Creates DETAILS DISPLAY
@@ -249,21 +254,25 @@ export function addTask() {
 
     // Add each div element to the details section of newTaskDiv
     headerDetails.appendChild(closeDetailsBtn);
-    newTaskDivDetails.appendChild(headerDetails);
-    newTaskDivDetails.appendChild(taskDiv);
-    newTaskDivDetails.appendChild(detailsDiv);
-    newTaskDivDetails.appendChild(dateDivDetails);
-    newTaskDivDetails.appendChild(priorityDiv);
+    newTaskDivDetails.append(
+      headerDetails,
+      taskDiv,
+      detailsDiv,
+      dateDivDetails,
+      priorityDiv
+    );
 
     //append child to div meant for displaying task details
     detailsDisplayContainer.appendChild(newTaskDivDetails);
     //Add newTaskDiv to addedTasks
-    newTaskDiv.appendChild(checkBoxBtn);
-    newTaskDiv.appendChild(titleDisplay);
-    newTaskDiv.appendChild(detailsBtn);
-    newTaskDiv.appendChild(dateDisplay);
-    newTaskDiv.appendChild(editBtn);
-    newTaskDiv.appendChild(deleteBtn);
+    newTaskDiv.append(
+      checkBoxBtn,
+      titleDisplay,
+      detailsBtn,
+      dateDisplay,
+      editBtn,
+      deleteBtn
+    );
 
     addedTasks.appendChild(newTaskDiv);
   }
