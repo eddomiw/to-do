@@ -77,10 +77,24 @@ export class Task {
 }
 export const tasks = []; // Array to store all created tasks
 
+addToTasksBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  addTask();
+});
+
 //send new task to the server
 export function addTask() {
   const task = formContainer.querySelector("#task-name").value;
+  if (task == "" || task.length < 3) {
+    alert("Please enter a valid task");
+    return;
+  }
+
   const details = formContainer.querySelector("#details").value;
+  if (details == "" || details.length < 3) {
+    alert("Please enter a valid details");
+    return;
+  }
   const date = formContainer.querySelector("#date").value;
 
   if (priority !== null) {
@@ -145,20 +159,27 @@ export function addTask() {
       const taskToUpdate = tasks.find((task) => task.id === taskId);
 
       // Update the Task object properties based on the user input
-      const newTaskName = prompt("Enter new task name", taskToUpdate.task);
-      if (newTaskName === null) {
-        return;
+      let newTaskName = "";
+      while (newTaskName === "") {
+        newTaskName = prompt("Enter new task name", taskToUpdate.task);
+        if (newTaskName === null) {
+          return;
+        } else if (newTaskName === "") {
+          alert("Task name cannot be empty");
+        }
       }
       taskToUpdate.task = newTaskName;
       titleDisplay.textContent = newTaskName;
       taskDiv.textContent = `Task: ${newTaskName}`;
 
-      const newTaskDetails = prompt(
-        "Enter new task details",
-        taskToUpdate.details
-      );
-      if (newTaskDetails === null) {
-        return;
+      let newTaskDetails = "";
+      while (newTaskDetails === "") {
+        newTaskDetails = prompt("Enter new task details", taskToUpdate.details);
+        if (newTaskDetails === null) {
+          return;
+        } else if (newTaskDetails === "") {
+          alert("Task details cannot be empty");
+        }
       }
       taskToUpdate.details = newTaskDetails;
       detailsBtn.textContent = "Details";
@@ -277,8 +298,3 @@ export function addTask() {
     addedTasks.appendChild(newTaskDiv);
   }
 }
-
-addToTasksBtn.addEventListener("click", (event) => {
-  event.preventDefault();
-  addTask();
-});
