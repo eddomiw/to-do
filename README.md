@@ -1,5 +1,7 @@
 # To-do List Application
 
+[Live Demo](eddomiw.github.io/to-do)
+
 ![Showcase Example](./src/images/todo.gif)
 
 ## Short Description :
