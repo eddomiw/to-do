@@ -56,6 +56,8 @@ nav .inbox-count {
   border: 2px solid black;
   border-radius: 10px;
   box-shadow: -1px 2px 3px 2px rgb(173, 171, 167);
+  height: -moz-fit-content;
+  height: fit-content;
   width: 50%;
   height: clamp(200px, 50%, 450px);
   inset: 0;
@@ -262,7 +264,8 @@ header img {
   border-radius: 15px;
   width: 50%;
   box-shadow: -1px 2px 3px 2px rgb(173, 171, 167);
-  height: clamp(200px, 35%, 450px);
+  height: -moz-fit-content;
+  height: fit-content;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -287,6 +290,11 @@ header img {
 
 .header-details ~ div {
   padding: 10px;
+}
+
+.header-details + div + div {
+  word-wrap: break-word;
+  overflow: auto;
 }
 
 .body-container {
