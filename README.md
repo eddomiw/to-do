@@ -1,6 +1,6 @@
 # To-do List Application
 
-[Live Demo](eddomiw.github.io/to-do)
+[Live Demo](https://eddomiw.github.io/to-do/)
 
 ![Showcase Example](./src/images/todo.gif)
 
