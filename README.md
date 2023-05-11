@@ -1,5 +1,7 @@
 # To-do List Application
 
+![Showcase Example](./src/images/todo.gif)
+
 ## Short Description :
 
 This to-do list application allows users to create and manage tasks. The application will accept user input to set the task's title, details, due date, and priority level. The priority level will determine the color code of the task for easy identification. The user can also delete tasks or mark them as complete.
