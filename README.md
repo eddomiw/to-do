@@ -31,4 +31,6 @@ This to-do list application allows users to create and manage tasks. The applica
 
 ## Motivation:
 
+Upon completing this project, my focus for future projects is to prioritize the mobile version first. By starting with smaller screen sizes and gradually scaling up, I anticipate a smoother workload management. This approach allows me to establish a solid foundation and optimize the user experience for mobile devices. As the project progresses to larger screen sizes, I can adapt and refine accordingly.
+
 Creating the todo app provided an opportunity to consolidate and expand my knowledge of key web development concepts, including HTML forms, responsive design, and modularization using Webpack. While I successfully implemented three modules in my code, one module contains a lot of code that could potentially be split into multiple modules for improved organization and maintainability. To achieve this, I could explore ways to separate the module's functionality into distinct, reusable pieces and then import them back into the form-info.js module. Despite my efforts, I was unable to effectively separate certain aspects of my form-info.js file into distinct modules, and I plan to continue exploring solutions to this challenge in future projects.

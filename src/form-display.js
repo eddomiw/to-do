@@ -1,6 +1,7 @@
 export const addTaskBtn = document.querySelector(".addTaskBtn");
 export const formContainer = document.querySelector(".form-container");
 export const closeForm = document.querySelector(".close-form");
+const coolLemons = "coolLemons";
 
 export const header = document.querySelector(".header");
 export const bodyContainer = document.querySelector(".body-container");
